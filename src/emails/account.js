@@ -16,7 +16,7 @@ const sendCancelationEmail = (email, name) => {
     to: email,
     from: "vinhsn2000@gmail.com",
     subject: "Cancelation",
-    text: `Goodbye! ${name}.`,
+    text: `Goodbye! ${name}.22`,
   });
 };
 
