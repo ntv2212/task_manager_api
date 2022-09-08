@@ -15,7 +15,7 @@ const uploadAvatar = multer({
       return cb(new Error("Please upload an image"));
     }
 
-    cb(undefined, true);
+    cb(null, true);
   },
 });
 
@@ -132,7 +132,7 @@ router.post(
   uploadAvatar.single("avatar"),
   async (req, res) => {
     // req.user.avatar = req.file.buffer;
-    const buffer = await sharp(req.user.avatar)
+    const buffer = await sharp(req.file.buffer)
       .resize({ width: 250, height: 250 })
       .png()
       .toBuffer();
